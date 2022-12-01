@@ -1,25 +1,24 @@
 //Code for Meta Colorful Knowledge Application
 import React from 'react'
-
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import {Navbar, Brand, CTA} from './components';
 import {Footer, Blog, Possibility, Features, WhatMCK4, Header} from './containers'
 import './App.css'
+import Home from './components/Home';
+import Login from './components/Login'
+import Signup from './components/Signup'
 
 const App = () => {
   return (
+    <Router>
     <div className = "App">
-      <div className = "gradient__bg">
-        <Navbar />
-        <Header />
-      </div>
-      <Brand />
-      <WhatMCK4 />
-      <Features />
-      <Possibility />
-      <CTA />
-      <Blog />
-      <Footer />
+      <Routes>
+        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/sign-in" element={<Login/>} />
+        <Route exact path="/sign-up" element={<Signup/>} />
+      </Routes>
     </div>
+    </Router>
   )
 }
 
