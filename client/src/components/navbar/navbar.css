@@ -49,6 +49,22 @@
     cursor: pointer;
 
 }
+.mck4__navbar-menu_container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: end;
+    background: var(--color-footer);
+    padding: 2rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    margin-top: 1rem;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 0 0 5 rgba(0,0,0,2);
+}
 
 .mck4__navbar-sign button,
 .mck4__navbar-menu_container button{
@@ -62,4 +78,7 @@
     border: 0;
     outline: none;
     cursor: pointer;
+}
+.mck4__navbar-menu_container-links-sign{
+    display: none;
 }

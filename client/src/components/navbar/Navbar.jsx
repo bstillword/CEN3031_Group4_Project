@@ -14,7 +14,7 @@ const Menu = () =>(
 )
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+  var [toggleMenu, setToggleMenu] = useState(false);
   return (
     <div className="mck4__navbar"> 
       <div className="mck4_navbar-links">
@@ -26,20 +26,38 @@ const Navbar = () => {
         </div>
       </div>
       <div className = "mck4__navbar-sign">
-        <button type="button"> Sign In</button>
+            <p>Sign in</p>
+            <button type="button">Sign up</button>
+    
       </div>
       <div className = "mck4__navbar-menu">
-        {toggleMenu 
+        {toggleMenu
+          ? <RiCloseLine color="#fff" size={27} onClick={() => setToggleMenu(false)} />
+          : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)} />}
+        {toggleMenu && (
+        <div className="mck4__navbar-menu_container scale-up-center">
+          <div className="mck4__navbar-menu_container-links">
+            <Menu />
+          </div>
+          <div className="mck4__navbar-menu_container-links-sign">
+            <p>Sign in</p>
+            <button type="button">Sign up</button>
+          </div>
+        </div>
+        )}
+        {/* {toggleMenu 
           ? <RiCloseLine color="#fff" size={27} onClick={() => setToggleMenu = false} />
           : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu = true} />
         }
         {toggleMenu &&(
           <div className = "mck4__navbar-menu_container scale-up-center">
+            <Menu />
             <div className = "mck4__navbar-menu_container-links">
-              <Menu />
+              <p>Sign in</p>
+              <button type="button">Sign up</button>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
 
