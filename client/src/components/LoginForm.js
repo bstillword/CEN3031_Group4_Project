@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import UserDetails from './UserInfo'
+
+
 import './LoginPage.css'
 
 export default class Login extends Component {
@@ -14,7 +17,7 @@ export default class Login extends Component {
     e.preventDefault();
     const { email, password } = this.state;
     console.log(email, password);
-    fetch("http://localhost:5000/login-user", {
+    fetch("http://localhost:5000/login", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -33,7 +36,8 @@ export default class Login extends Component {
         if (data.status == "ok") {
           alert("login successful");
           window.localStorage.setItem("token", data.data);
-          window.location.href = "./userDetails";
+          window.location.href = "./user";
+          
         }
       });
   }
