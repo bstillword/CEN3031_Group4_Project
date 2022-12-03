@@ -5,11 +5,11 @@ import './navbar.css';
 
 const Menu = () =>(
   <>
-   <p><a href="#home"> Home</a></p>
-          <p><a href="#whatmck4"> What is Meta Colorful Knowledge?</a></p>
-          <p><a href="#possibility"> Likes</a></p>
-          <p><a href="#features"> Followers </a></p>
-          <p><a href="#blog"> Publishers</a></p>
+          <p><a href="/home"> Home</a></p>
+          <p><a href="/articles"> Articles</a></p>
+          <p><a href="/whatmck4"> What is Meta Colorful Knowledge?</a></p>
+          <p><a href="/likes"> Likes</a></p>
+          <p><a href="/profile"> Profile </a></p>
   </>
 )
 

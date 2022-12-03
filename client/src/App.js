@@ -4,17 +4,27 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import {Navbar, Brand, CTA} from './components';
 import {Footer, Blog, Possibility, Features, WhatMCK4, Header} from './containers'
 import './App.css'
+import Article from './components/Article'
 import Home from './components/Home';
 import Login from './components/Login'
 import Signup from './components/Signup'
 import UserDetails from './components/UserInfo';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const App = () => {
+  
   return (
     <Router>
     <div className = "App">
       <Routes>
+        <Route exact path="/home" element={<Home/>} />
         <Route exact path="/" element={<Home/>} />
+        <Route exact path="/articles" element={<Article/>}/>
         <Route exact path="/sign-in" element={<Login/>} />
         <Route exact path="/sign-up" element={<Signup/>} />
         <Route exact path="/user" element={<UserDetails/>} />
@@ -25,46 +35,4 @@ const App = () => {
 }
 
 export default App
-
-//Initial Tutorial Code Below:
-/*
-import React, { useEffect, useState } from 'react'
-
-function App() {
-
-  
-  const [backendData, setBackendData] = useState([{}])
-
-  useEffect(() => {
-    fetch("/api").then(
-      response => response.json()
-    ).then(
-      data => {
-        setBackendData(data)
-      }
-    )
-  }, [])
-
-  return (
-    <div>
-      {(typeof backendData.users === 'undefined') ? (
-        <p> Loading...</p>
-      ) : (
-        backendData.users.map((user, i) => (
-          <p key={i}>{user} </p>
-
-        ))
-      )}
-      <p> Group 4 Project Software Engineering</p>
-      <p> Test Message</p>
-    </div>
-  )
-
-}
-
-export default App
-*/
-
-
-//Code for Our FrontEnd Below:
 
