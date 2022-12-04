@@ -1,6 +1,6 @@
 import React from 'react'
-import {Navbar, Brand, CTA} from '../components';
-import {Footer, Blog, Possibility, Features, WhatMCK4, Header, ArticleBody} from '../containers'
+import {Navbar, Brand, CTA} from '..';
+import {Footer, Blog, Possibility, Features, WhatMCK4, Header, ArticleBody} from '../../containers'
 
 
 

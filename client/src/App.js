@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import {Navbar, Brand, CTA} from './components';
 import {Footer, Blog, Possibility, Features, WhatMCK4, Header} from './containers'
 import './App.css'
-import Article from './components/Article'
+import Article from './components/article/Article'
 import Home from './components/Home';
 import Login from './components/Login'
 import Signup from './components/Signup'

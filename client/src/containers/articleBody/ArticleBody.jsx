@@ -9,8 +9,7 @@ import Col from 'react-bootstrap/Col';
 
 
 
-function ArticleBody() {
-  
+const ArticleBody = () => {
 }
 
 export default ArticleBody
