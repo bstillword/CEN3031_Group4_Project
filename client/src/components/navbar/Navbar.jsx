@@ -26,8 +26,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className = "mck4__navbar-sign">
-            <p>Sign in</p>
-            <button type="button">Sign up</button>
+            <p><a href="/sign-in">Sign in</a></p>
+            <button type="button"><a href="/sign-up">Sign up</a></button>
     
       </div>
       <div className = "mck4__navbar-menu">
