@@ -7,13 +7,14 @@ import Article from './components/article/Article'
 import Home from './components/Home';
 import Login from './components/Login'
 import Signup from './components/Signup'
+import searchBar from './containers/search/Searchbar';
 import UserDetails from './components/UserInfo';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+// import axios from 'axios';
+// import { useEffect, useState } from 'react';
+// import Card from 'react-bootstrap/Card';
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 
 const App = () => {
   
