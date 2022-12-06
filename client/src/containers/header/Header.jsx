@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.css';
 import peeps from '../../assets/peeps.png';
-import mck_logo from '../../assets/mck_logo.PNG';
+import mck_logo from '../../assets/mck_logo.png';
 const Header = () => {
   return (
     <div className='mck4__header section__padding' id="home">

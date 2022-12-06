@@ -8,8 +8,7 @@ const Menu = () =>(
           <p><a href="/home"> Home</a></p>
           <p><a href="/articles"> Articles</a></p>
           <p><a href="/whatmck4"> What is Meta Colorful Knowledge?</a></p>
-          <p><a href="/likes"> Likes</a></p>
-          <p><a href="/profile"> Profile </a></p>
+          <p><a href="/user"> Profile </a></p>
   </>
 )
 
@@ -26,8 +25,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className = "mck4__navbar-sign">
-            <p>Sign in</p>
-            <button type="button">Sign up</button>
+            <p><a href="/sign-in">Sign in</a></p>
+            <button type="button"><a href="/sign-up">Sign up</a></button>
     
       </div>
       <div className = "mck4__navbar-menu">

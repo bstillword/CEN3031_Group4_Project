@@ -10,15 +10,25 @@ export default class UserDetails extends Component {
       userData: "",
     };
     this.pic = "https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80";
+    this.routeChange = this.routeChange.bind(this)
+    this.onFollow = this.onFollow.bind(this)
+    this.onLike = this.onLike.bind(this)
   }
-  routeChange = () => { 
+  routeChange(){ 
     console.log("do i get here");
-    let path = "/"; 
-    useNavigate(path);
+    window.location.href = "./"
+  }
+
+  onFollow(){
+    console.log("yea do i get here");
+  }
+
+  onLike(){
+    console.log("yea but do i also get here");
+    console.log(this.state.userData.likes.length)
   }
 
   componentDidMount() {
-    this.home.addEventListener('home', this.routeChange);
     console.log("do");
     fetch("http://localhost:5000/userData", {
       method: "POST",
@@ -39,16 +49,11 @@ export default class UserDetails extends Component {
       });
   }
 
-  componentWillUnmount() {
-    // Make sure to remove the DOM listener when the component is unmounted.
-    this.home.removeEventListener("home", this.routeChange);
-  }
-
   render() {
     return (
       <div className="App h-screen flex justify-center items-center">
       <div className="bg-white rounded-xl shadow-2xl p-10 flex flex-col items-center">
-        <div className="relative absolute top-0 right-20" ref={elem => this.home = elem}>
+        <div className="relative absolute top-0 right-20" onClick={() => this.routeChange()}>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-indigo-400 hover:ring-2 ring-offset-2 rounded-full" id="home">
           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
         </svg>
@@ -64,28 +69,28 @@ export default class UserDetails extends Component {
           <img src = {this.pic} alt="avatar" className="h-24 hover:ring-2 ring-offset-2 ring-pink-300 cursor-pointer rounded-full"></img>
         </div>
         
-        <div id = "name" className="font-semibold text-xl mt-2">Username<h1>{this.state.userData.fname}</h1></div>
+        <div id = "name" className="font-semibold text-xl mt-2">{this.state.userData.fname} {this.state.userData.lname}</div>
         
-        <div id = "email" className="text-sm text-gray-500">Email <h1>{this.state.userData.email}</h1></div>
+        <div id = "email" className="text-sm text-gray-500">{this.state.userData.email}</div>
         
         <div id = "stats" className="stats flex justify-between items-center my-6 text-sm">
           <div className="stat-sub flex flex-col items-center font-semibold mr-4">
-            <div id = "likes" className="stat-num text-indigo-500 font-bold text-md">43</div>
+            <div id = "likes" className="stat-num text-indigo-500 font-bold text-md">0</div>
             <div className="stat-num text-indigo-400 text-xs">LIKES</div>
           </div>
           <div className="stat-sub flex flex-col items-center font-semibold mr-4">
-            <div id="followers" className="stat-num text-indigo-500 font-bold text-md">53</div>
+            <div id="followers" className="stat-num text-indigo-500 font-bold text-md">0</div>
             <div className="stat-num text-indigo-400 text-xs">FOLLOWERS</div>
           </div>
           <div className="stat-sub flex flex-col items-center font-semibold mr-4">
-            <div id="following" className="stat-num text-indigo-500 font-bold text-md">8</div>
+            <div id="following" className="stat-num text-indigo-500 font-bold text-md">0</div>
             <div className="stat-num text-indigo-400 text-xs">FOLLOWING</div>
           </div>
         </div>
         
         <div id = "actions" className="actions mt-4 flex justify-center items-center">
-          <div><button id = "follow" className="follow focus:ring-2 ring-offset-2 mr-4 bg-indigo-500 text-white p-2 px-4 rounded-md">FOLLOW</button></div>
-          <div><button id = "favs" className="follow focus:ring-2 ring-offset-2 ring-pink-600 mr-4 bg-pink-500 text-white p-2 px-4 rounded-md">LIKES</button></div>
+          <div><button id = "follow" onClick={() => this.onFollow()} className="follow focus:ring-2 ring-offset-2 mr-4 bg-indigo-500 text-white p-2 px-4 rounded-md">FOLLOW</button></div>
+          <div><button id = "favs" onClick={() => this.onLike()} className="follow focus:ring-2 ring-offset-2 ring-pink-600 mr-4 bg-pink-500 text-white p-2 px-4 rounded-md">LIKES</button></div>
         </div>
       </div>
       </div>

@@ -1,21 +1,24 @@
 import React, { Component } from "react";
 import UserDetails from './UserInfo'
-
-
 import './LoginPage.css'
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      fname: "",
+      lname: "",
       email: "",
       password: "",
+      following: [],
+      followers: [],
+      likes: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
     e.preventDefault();
-    const { email, password } = this.state;
+    const { fname, lname, email, password, following, followers, likes } = this.state;
     console.log(email, password);
     fetch("http://localhost:5000/login", {
       method: "POST",
@@ -26,8 +29,13 @@ export default class Login extends Component {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
+        fname,
+        lname,
         email,
         password,
+        following,
+        followers,
+        likes
       }),
     })
       .then((res) => res.json())
@@ -35,6 +43,11 @@ export default class Login extends Component {
         console.log(data, "userRegister");
         if (data.status == "ok") {
           alert("login successful");
+          this.setState({fname: data.fname})
+          this.setState({lname: data.lname})
+          this.setState({likes: data.likes})
+          this.setState({following: data.following})
+          this.setState({followers: data.followers})
           window.localStorage.setItem("token", data.data);
           window.location.href = "./user";
           

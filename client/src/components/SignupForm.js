@@ -8,13 +8,16 @@ export default class SignUpForm extends Component {
       lname: "",
       email: "",
       password: "",
+      following: [],
+      followers: [],
+      likes: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
     e.preventDefault();
-    const { fname, lname, email, password } = this.state;
-    console.log(fname, lname, email, password);
+    const { fname, lname, email, password, following, followers, likes } = this.state;
+    console.log(fname, lname, email, password, following, followers, likes);
     fetch("http://localhost:5000/register", {
       method: "POST",
       crossDomain: true,
@@ -28,6 +31,9 @@ export default class SignUpForm extends Component {
         email,
         lname,
         password,
+        following,
+        followers,
+        likes
       }),
     })
       .then((res) => res.json())

@@ -5,25 +5,12 @@ const cors = require("cors");
 require("dotenv").config({ path: "./config.env" });
 const port = process.env.PORT || 5000;
 const http = require("http").Server(app);
-const browserObject = require('./browser');
 const scraperController = require('./webController');
-
-const socketIO = require('socket.io')(http, {
-    cors: {
-        origin: "http://localhost:3000"
-    }
-});
-
-socketIO.on('connection', (socket) => {
-    console.log(`⚡: ${socket.id} user just connected!`);
-    socket.on('disconnect', () => {
-      console.log('A user disconnected');
-    });
-});
 
 app.use(cors());
 app.use(express.json());
 app.use(require("./routes/record"));
+
 // get driver connection
 const dbo = require("./db/conn");
 
@@ -45,12 +32,24 @@ app.get("/api", (req,res) => {
     res.json({"users": ["userOne", "userTwo", "userThree"]})
 });
 
+
+app.post("/webController", async (req,res) => {
+    try{
+        let colors = await scraperController(req.body.topic)
+        console.log(colors)
+        return res.send(colors)
+    }
+    catch (error){
+        res.send({status: "error"});
+    }
+});
+
 require("./userRecord")
 
 const User=mongoose.model("UserInfo");
 
 app.post("/register", async(req, res) =>{
-    const {fname,lname,email, password}= req.body;
+    const {fname,lname,email, password, following, followers, likes}= req.body;
     try{
         const oldUser = await User.findOne({ email})
         if(oldUser)
@@ -60,6 +59,10 @@ app.post("/register", async(req, res) =>{
             lname,
             email,
             password,
+            following,
+            followers,
+            likes
+
         });
         res.send({stats: "ok"});
     } catch (error){
@@ -111,9 +114,3 @@ app.listen(port, () => {
       });
     console.log("Server started on port 5000");
 });
-
-//Start the browser and create a browser instance
-let browserInstance = browserObject.startBrowser();
-
-// Pass the browser instance to the scraper controller
-scraperController(browserInstance)

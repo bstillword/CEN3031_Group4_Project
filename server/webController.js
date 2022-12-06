@@ -1,10 +1,12 @@
 const webScraper = require('./webScrapper');
-async function scrapeAll(browserInstance){
-	let browser;
+const browserObject = require('./browser');
+async function scrapeAll(term){
 	try{
-		browser = await browserInstance;
-		await webScraper.scraper(browser);	
-		
+		let browser = await browserObject.startBrowser();
+		webScraper.search = await term;
+		console.log(term)
+		let colors = webScraper.scraper(browser);	
+		return colors;
 	}
 	catch(err){
 		console.log("Could not resolve the browser instance => ", err);
