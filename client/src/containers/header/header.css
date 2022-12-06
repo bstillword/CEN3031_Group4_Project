@@ -1,0 +1,115 @@
+.mck4__header {
+    display: flex;
+    flex-direction: row;
+}
+
+.mck4__header-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    margin-right: 4rem;
+}
+
+.mck4__header-content h1 {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 58px;
+    line-height: 72px;
+
+    letter-spacing: -0.04em;
+}
+
+.mck4__header-content p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--color-text);
+
+    margin-top: 1.5rem;
+}
+
+.mck4__header-cont__input {
+    width: 100%;
+    margin: 2rem 0 1rem;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.mck4__header-cont__input input {
+    flex: 2;
+    width: 100%;
+    min-height: 50px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    background: var(--color-footer);
+    border: 2px solid var(--color-footer);
+    padding: 0 1rem;
+    outline: none;
+    color: #fff;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.mck4__header-cont__input button {
+    flex: 0.6;
+    width: 100%;
+    min-height: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 27px;
+    background: #6a2b1c;
+    border: 2px solid #6a2b1c;
+    padding: 0 1rem;
+    color: #eee;
+    cursor: pointer;
+    outline: none;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.mck4__header-cont__peeps {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+
+    margin-top: .75rem;
+}
+
+.mck4__header-cont__peeps img {
+    width: 181.79px;
+    height: 38px;
+}
+
+.mck4__header-cont__peeps p {
+    margin: 0 0 0 1rem;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 38px;
+    color: #fff;
+    text-align: center;
+}
+
+.mck4__header-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mck4__header-img img {
+    width: 100%;
+    height: 100%;
+}
