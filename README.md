@@ -1,4 +1,4 @@
-# CEN3031_Group4_Project
+# META COLORFUL KNOWLEDGE
 
 Meta Colorful Knowledge is an educational software that will bring
 informative news and facts in an easily digestible, visually stimulating format for a wide
