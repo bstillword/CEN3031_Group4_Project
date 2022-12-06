@@ -18,7 +18,7 @@ const ArticleBody = () => {
     //Set loading boolean to true so that we know to show loading text
     setLoading(true);
     //Make news api call using axios
-    let topic = 'lion'
+    let topic = 'rat'
     let articleCount = '1'
     let url = 'https://newsapi.org/v2/everything?q='+topic+'&apiKey=b738ed2669c54125aae96fba7c1107d5&pageSize=' +articleCount
     const resp = await axios.get(url);
@@ -32,25 +32,20 @@ const ArticleBody = () => {
   return (
     <div className="App">
       <header className="App-header">
-        {loading ? "Loading..." : <Container>
+        {loading ? "Loading..." :
+          <Container>
           {newsData.map((newsData, index) =>
-            <Row className="d-flex justify-content-center">
-              <Col xs={12} className="mt-5 w-500" key={index}>
+          <div className = 'articleBody'>
                 <a target="_blank" href={newsData.url}>
-                  <Card >
-                    <Card.Title className="my-3">  {newsData.title}</Card.Title>
-                    <Card.Img src={newsData.urlToImage} />
-                    <Card.Body>
-                      <Card.Text>
-                        {newsData.description}
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
+                  <h1 className="articleTitle">  {newsData.title} </h1>
+                  <img className="imageBody" src={newsData.urlToImage} />
+                  <div className="articleDescription">{newsData.description}</div>
                 </a>
-              </Col>
-            </Row>
+          </div>
+            
           )}
-        </Container>
+
+         </Container>
         }
       </header>
     </div>

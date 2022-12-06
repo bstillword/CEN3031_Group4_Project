@@ -41,7 +41,7 @@ export default class SignUpForm extends Component {
         <h3>Sign Up</h3>
 
         <div className="mb-3">
-          <label>First name</label>
+          <label>First name: </label>
           <input
             type="text"
             className="form-control"
@@ -51,7 +51,7 @@ export default class SignUpForm extends Component {
         </div>
 
         <div className="mb-3">
-          <label>Last name</label>
+          <label>Last name: </label>
           <input
             type="text"
             className="form-control"
@@ -61,7 +61,7 @@ export default class SignUpForm extends Component {
         </div>
 
         <div className="mb-3">
-          <label>Email address</label>
+          <label>Email address: </label>
           <input
             type="email"
             className="form-control"
@@ -71,7 +71,7 @@ export default class SignUpForm extends Component {
         </div>
 
         <div className="mb-3">
-          <label>Password</label>
+          <label>Password: </label>
           <input
             type="password"
             className="form-control"
@@ -86,7 +86,7 @@ export default class SignUpForm extends Component {
           </button>
         </div>
         <p className="forgot-password text-right">
-          Already registered <a href="/sign-in">sign in?</a>
+          Already registered? <a href="/sign-in">Sign In</a>
         </p>
       </form>
     );

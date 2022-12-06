@@ -1,5 +1,18 @@
 .LoginPage {
-    background-color: rgb(152, 230, 255);
+    background:-moz-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+
+     /* safari 5.1+,chrome 10+ */
+     background:-webkit-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+ 
+     /* opera 11.10+ */
+     background:-o-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+ 
+     /* ie 10+ */
+     background:-ms-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+ 
+     /* global 92%+ browsers support */
+     background:radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+
     min-height: 100%;
     min-height: 100vh;
     display: flex;
@@ -10,7 +23,20 @@
     border: black
 }
 .SignUpPage {
-    background-color: rgb(152, 230, 255);
+    background:-moz-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+
+     /* safari 5.1+,chrome 10+ */
+     background:-webkit-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+ 
+     /* opera 11.10+ */
+     background:-o-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+ 
+     /* ie 10+ */
+     background:-ms-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+ 
+     /* global 92%+ browsers support */
+     background:radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+
     min-height: 100%;
     min-height: 100vh;
     display: flex;
@@ -25,6 +51,25 @@
     justify-content: center;
 }
 .Form{
+    border: 2px solid black;
+    border-radius: 5px;
     align-items: center;
     justify-content: center;
+    background-color: white;
+}
+
+.navBar{
+    background:-moz-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
+
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 50% 50%, rgba(44, 16, 160, 1) 0%, rgba(197, 79, 79, 1) 100%);
 }

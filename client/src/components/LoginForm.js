@@ -48,7 +48,7 @@ export default class Login extends Component {
         <h3>Sign In</h3>
 
         <div className="mb-3">
-          <label>Email address</label>
+          <label>Email address: </label>
           <input
             type="email"
             className="form-control"
@@ -58,7 +58,7 @@ export default class Login extends Component {
         </div>
 
         <div className="mb-3">
-          <label>Password</label>
+          <label>Password: </label>
           <input
             type="password"
             className="form-control"

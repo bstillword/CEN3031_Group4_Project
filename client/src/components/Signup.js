@@ -9,7 +9,7 @@ import './LoginPage.css';
 const SignUp = () => {
     return (
         <div>
-        <Navbar/>
+        <div className='navBar'> <Navbar/> </div>
         <div className='SignUpPage'>
             <div className='Form'>
             <SignUpForm />

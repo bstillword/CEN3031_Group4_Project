@@ -1,0 +1,42 @@
+.App{
+
+}
+
+.articleTitle{
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700; color:#202020;
+  text-transform: uppercase;
+  word-spacing: 1px; letter-spacing:2px;
+  border: 2px solid white;
+  border-radius: 5px;
+
+    width: auto;
+    height: auto;
+    background-color: white;
+    overflow:auto;
+}
+
+.articleDescription{
+    text-align: center;
+  font-size: 16px;
+  font-weight: 700; color:#202020;
+  text-transform: uppercase;
+  word-spacing: 1px; letter-spacing:2px;
+  border: 2px solid white;
+  border-radius: 5px;
+    text-align: center;
+    width: auto;
+    height: auto;
+    background-color: white;
+    overflow:auto;
+}
+
+.imageBody{
+    border-radius: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+

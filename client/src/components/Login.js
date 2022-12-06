@@ -9,7 +9,7 @@ import './LoginPage.css';
 const Login = () => {
     return (
         <div>
-        <Navbar/>
+        <div className='navBar'> <Navbar/> </div>
         <div className='LoginPage'>
             <div className='Form'>
             <LoginForm />
