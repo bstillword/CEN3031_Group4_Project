@@ -17,7 +17,6 @@ const dbo = require("./db/conn");
 const mongoose = require('mongoose');
 
 const jwt = require("jsonwebtoken");
-//const webController = require('./webController');
 
 const JWT_SECRET = "C4B823EC3C03B6D54E6C64C1B62F1F1EB417978D0538216C5D1B33A88A3F04B1"
 
@@ -45,7 +44,6 @@ app.post("/webController", async (req,res) => {
     }
 });
 
-
 require("./userRecord")
 
 const User=mongoose.model("UserInfo");
@@ -64,6 +62,7 @@ app.post("/register", async(req, res) =>{
             following,
             followers,
             likes
+
         });
         res.send({stats: "ok"});
     } catch (error){
