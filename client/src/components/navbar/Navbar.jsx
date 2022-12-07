@@ -7,7 +7,7 @@ const Menu = () =>(
   <>
           <p><a href="/home"> Home</a></p>
           <p><a href="/articles"> Articles</a></p>
-          <p><a href="/whatmck4"> What is Meta Colorful Knowledge?</a></p>
+          <p><a href="/ismck4"> What is Meta Colorful Knowledge?</a></p>
           <p><a href="/user"> Profile </a></p>
   </>
 )
