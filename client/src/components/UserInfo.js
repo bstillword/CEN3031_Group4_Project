@@ -19,6 +19,7 @@ export default class UserDetails extends Component {
     window.location.href = "./"
   }
 
+  //This was a change
   onFollow(){
     console.log("yea do i get here");
   }
