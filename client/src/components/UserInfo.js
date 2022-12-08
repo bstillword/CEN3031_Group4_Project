@@ -20,6 +20,7 @@ export default class UserDetails extends Component {
   }
 
   //This was a change
+  //This was a change
   onFollow(){
     console.log("yea do i get here");
   }
